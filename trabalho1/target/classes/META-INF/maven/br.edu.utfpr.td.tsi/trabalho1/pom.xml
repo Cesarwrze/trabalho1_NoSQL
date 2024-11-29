@@ -76,6 +76,11 @@
 			<version>1.14.16</version>
 		</dependency>
 
+		<dependency>
+			<groupId>br.edu.utfpr.td.tsi</groupId>
+			<artifactId>meu-posto-saude</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>

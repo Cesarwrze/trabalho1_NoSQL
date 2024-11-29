@@ -6,12 +6,16 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.UniqueElements;
 import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.mongodb.lang.NonNull;
+
+import br.edu.utfpr.td.tsi.trabalho1.constraint.validator.CpfUnico;
 
 @Document
 public class Paciente {
@@ -27,7 +31,7 @@ public class Paciente {
 	@NotBlank(message = "Número de telefone não pode ser nulo")
 	private String numeroTelefone;
 
-	@NotBlank(message = "CPF não pode ser nulo")
+	@CpfUnico
 	@CPF(message = "CPF inválido")
 	private String cpf;
 
