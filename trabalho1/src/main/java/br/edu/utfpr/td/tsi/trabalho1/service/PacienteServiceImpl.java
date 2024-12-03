@@ -25,19 +25,6 @@ public class PacienteServiceImpl implements PacienteService {
 	}
 
 	@Override
-	public void editar(Paciente paciente) {
-		Paciente pacienteEditado = new Paciente();
-		pacienteEditado.setId(paciente.getId());
-		pacienteEditado.setNome(paciente.getNome());
-		pacienteEditado.setSobrenome(paciente.getSobrenome());
-		pacienteEditado.setDataNascimento(paciente.getDataNascimento());
-		pacienteEditado.setCpf(paciente.getCpf());
-		
-		pacienteRepository.delete(paciente);
-		pacienteRepository.save(pacienteEditado);
-	}
-
-	@Override
 	public void deletar(String id) {
 		pacienteRepository.deleteById(id);
 	}
