@@ -27,10 +27,6 @@ public class CpfUnicoValidator implements ConstraintValidator<CpfUnico, String> 
 			return true;
 		}
 		
-		if (pacienteRepository.findByCpf(cpf) == null) {
-			return true;
-		}
-		
 		String newCpf = cpf.replaceAll("[\\D]", "");
 		return pacienteRepository.findByCpf(newCpf) == null;
 	}
